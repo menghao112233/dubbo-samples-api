@@ -32,10 +32,11 @@ public class Application {
     public static void main(String[] args) throws IOException {
         ReferenceConfig<GreetingsService> reference = new ReferenceConfig<>();
         reference.setInterface(GreetingsService.class);
+        reference.setUrl("dubbo://localhost:20880");
 
         DubboBootstrap.getInstance()
                 .application("first-dubbo-consumer")
-                .registry(new RegistryConfig(ZOOKEEPER_ADDRESS))
+//                .registry(new RegistryConfig(ZOOKEEPER_ADDRESS))
                 .reference(reference)
                 .start();
 

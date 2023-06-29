@@ -35,7 +35,7 @@ public class Application {
 
         DubboBootstrap.getInstance()
                 .application("first-dubbo-provider")
-                .registry(new RegistryConfig(ZOOKEEPER_ADDRESS))
+//                .registry(new RegistryConfig(ZOOKEEPER_ADDRESS))
                 .protocol(new ProtocolConfig("dubbo", -1))
                 .service(service)
                 .start()
